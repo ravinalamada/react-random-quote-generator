@@ -25,10 +25,12 @@ function fetchAuthorQoutes() {
 
   return (
     <>
-    <Link to='/'>Home</Link>
+    <Link to='/'>
+      <a href="/" className="home">Home</a>
+    </Link>
     <ul>
       {authorQuotes.quotes.map(item => (
-          <li key={item.quotAuthor}>{item.quoteText}</li>)
+          <li key={item.id}><h3>{item.quoteText}</h3></li>)
         )
       }
     </ul>

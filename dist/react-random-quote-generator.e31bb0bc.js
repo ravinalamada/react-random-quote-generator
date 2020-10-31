@@ -33914,12 +33914,11 @@ function FetcRandomQuotes() {
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Header.default, {
     handleClick: handleClick
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/"
   }), /*#__PURE__*/_react.default.createElement("h2", null, randomQuotes.quoteText), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/author/${randomQuotes.quoteAuthor}`
   }, /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn-lead"
+    className: "btn-lead",
+    key: randomQuotes.quoteAuthor
   }, /*#__PURE__*/_react.default.createElement("p", {
     className: "name"
   }, randomQuotes.quoteAuthor), /*#__PURE__*/_react.default.createElement("p", {
@@ -33971,9 +33970,12 @@ function fetchAuthorQoutes() {
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, "Home"), /*#__PURE__*/_react.default.createElement("ul", null, authorQuotes.quotes.map(item => /*#__PURE__*/_react.default.createElement("li", {
-    key: item.quotAuthor
-  }, item.quoteText))));
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/",
+    className: "home"
+  }, "Home")), /*#__PURE__*/_react.default.createElement("ul", null, authorQuotes.quotes.map(item => /*#__PURE__*/_react.default.createElement("li", {
+    key: item.id
+  }, /*#__PURE__*/_react.default.createElement("h3", null, item.quoteText)))));
 }
 
 var _default = fetchAuthorQoutes;
@@ -34046,7 +34048,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52047" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54497" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

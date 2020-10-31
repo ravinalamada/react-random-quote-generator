@@ -27,10 +27,9 @@ function FetcRandomQuotes() {
   return (
     <>
       <Header handleClick={handleClick} />
-      <Link to='/'></Link>
       <h2>{randomQuotes.quoteText}</h2>
       <Link to={`/author/${randomQuotes.quoteAuthor}`}>
-        <button className="btn-lead">
+        <button className="btn-lead" key={randomQuotes.quoteAuthor}>
           <p className="name">{randomQuotes.quoteAuthor}</p>
           <p className="genre">{randomQuotes.quoteGenre}</p>
         </button>
