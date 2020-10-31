@@ -3,6 +3,7 @@ body {
   padding: 0;
   color: #4F4F4F;
   font-size: 24px;
+  background-color: beige;
 }
 
 * {
@@ -10,7 +11,6 @@ body {
 }
 
 #root {
-  background-color: beige;
   padding: 16px;
 }
 
@@ -21,6 +21,7 @@ header {
 }
 
 h1 {
+  margin: 0;
   margin-inline-end: 16px;
 }
 
@@ -66,11 +67,20 @@ ul {
   column-gap: 16px;
 }
 
+.container {
+  background: #434CCC;
+  color: white;
+}
+
+.container,
+li {
+  padding: 32px;
+  border-radius: 8px;
+}
+
 li {
   background-color: white;
   list-style: none;
-  padding: 16px;
-  border-radius: 8px;
 }
 
 .home {
@@ -100,6 +110,12 @@ li {
 }
 
  @media (min-width: 1000px) {
+
+  .container {
+    max-width: 700px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
 
   ul {
     display: grid;

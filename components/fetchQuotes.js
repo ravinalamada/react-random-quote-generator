@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import Header from "./Header";
 
 const randomQuotesUrl = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
-const genreQuotes = "https://quote-garden.herokuapp.com/api/v2/genres/:genreName?page=1&limit=10";
 
 function FetcRandomQuotes() {
   const [randomQuotes, setRandomQoutes] = useState([]);
@@ -13,7 +11,6 @@ function FetcRandomQuotes() {
     const res = await fetch(randomQuotesUrl);
     const data = await res.json();
     setRandomQoutes(data.quote);
-    console.log();
   }
 
   useEffect(() => {
@@ -25,7 +22,7 @@ function FetcRandomQuotes() {
   }
 
   return (
-    <>
+    <div className="container">
       <Header handleClick={handleClick} />
       <h2>{randomQuotes.quoteText}</h2>
       <Link to={`/author/${randomQuotes.quoteAuthor}`}>
@@ -34,7 +31,7 @@ function FetcRandomQuotes() {
           <p className="genre">{randomQuotes.quoteGenre}</p>
         </button>
       </Link>
-    </>
+    </div>
   )
 }
 

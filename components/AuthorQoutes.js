@@ -12,7 +12,6 @@ function fetchAuthorQoutes() {
     const res = await fetch(authorQuotesUrl + authorName + PAGES);
     const data = await res.json();
     setAuthorQuotes(data)
-    console.log(data.quotes);
   }
 
   useEffect(() => {
@@ -30,8 +29,9 @@ function fetchAuthorQoutes() {
     </Link>
     <ul>
       {authorQuotes.quotes.map(item => (
-          <li key={item.id}><h3>{item.quoteText}</h3></li>)
+          <li key={item.id}><h3>{item.quoteText}</h3></li>
         )
+      )
       }
     </ul>
     </>
